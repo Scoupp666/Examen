@@ -1,0 +1,65 @@
+.Amiibos
+{
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carta 
+{
+    width: 40vh;
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, red, orange, yellow) 1;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px auto;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+
+/* Amiibos.css */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    background: linear-gradient(to right, red, orange, yellow); /* Degradado lineal de rojo, naranja y amarillo */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Agregar animación al hacer hover */
+  }
+  
+  .btn:hover {
+    background-color: black;
+    opacity: 0.5;
+    transform: scale(1.05); /* Un pequeño aumento de tamaño al hacer hover */
+  }
+  
+  .btn:disabled {
+    background: #ccc; /* Color gris claro para botones deshabilitados */
+    cursor: not-allowed;
+  }
+  
+  .btn:disabled:hover {
+    background: #ccc; /* Mantener gris al pasar el ratón si está deshabilitado */
+  }
+  
+  
