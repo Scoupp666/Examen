@@ -28,7 +28,6 @@ a
     transition-duration: 350ms;
 }
 
-
 .navbar a
 {
     margin: 0;
@@ -49,3 +48,26 @@ a:hover
     opacity: 0.5;
     transform: scale(1); /* Ajusta este valor para un efecto más sutil */
 }
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+      height: 50px;
+      gap: 50px;
+    }
+    a {
+      width: 60px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* For screens smaller than 480px (small mobiles) */
+  @media only screen and (max-width: 480px) {
+    .navbar {
+      height: 40px;
+      gap: 30px;
+    }
+    a {
+      width: 40px;
+      font-size: 0.6rem;
+    }
+  }
