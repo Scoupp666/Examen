@@ -44,7 +44,7 @@ const Series = () => {
   const [loading, setLoading] = useState(false);
   const [todoText, setTodoText] = useState("");
 
-  const onClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const onClick = async (_: React.MouseEvent<HTMLButtonElement>) => {
     if (!todoText.trim()) {
       setError("El campo de búsqueda no puede estar vacío.");
       return;
