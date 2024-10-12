@@ -89,79 +89,83 @@ const Series = () => {
         {amiiboList.length > 0 ? (
           amiiboList.map((amiibo) => (
             <div key={amiibo.tail} className="series-card">
-              <h4>{amiibo.name}</h4>
+              <div className="img">
               <img src={amiibo.image} alt={amiibo.name} />
-              <p>Personaje: {amiibo.character}</p>
-              <p>Serie de Amiibo: {amiibo.amiiboSeries}</p>
-              <p>Serie del juego: {amiibo.gameSeries}</p>
-              <p>Tipo: {amiibo.type}</p>
-              <p>Fecha de lanzamiento en JP: {amiibo.release.jp}</p>
-              <p>Fecha de lanzamiento en NA: {amiibo.release.na}</p>
-              <p>Fecha de lanzamiento en EU: {amiibo.release.eu}</p>
-              <p>Fecha de lanzamiento en AU: {amiibo.release.au}</p>
+              </div>
 
-              {/* Consolas */}
-              <p>Consola: {amiibo.console}</p>
-              <p>Plataforma: {amiibo.plataform}</p>
-              <p>Estilo: {amiibo.style}</p>
-              <p>Switch: {amiibo.switch}</p>
-              <p>Wii U: {amiibo.wiiu}</p>
-              <p>Wii: {amiibo.wii}</p>
-              <p>Nintendo 3DS: {amiibo.nintendo3ds}</p>
+              <div className="info">
+                <h4>{amiibo.name}</h4>
+                <p> <span>Personaje:</span> {amiibo.character}</p>
+                <p> <span>Serie de Amiibo:</span> {amiibo.amiiboSeries}</p>
+                <p> <span>Serie del juego:</span> {amiibo.gameSeries}</p>
+                <p> <span>Tipo:</span> {amiibo.type}</p>
+                {/* <p>Fecha de lanzamiento en JP: {amiibo.release.jp}</p>
+                <p>Fecha de lanzamiento en NA: {amiibo.release.na}</p>
+                <p>Fecha de lanzamiento en EU: {amiibo.release.eu}</p>
+                <p>Fecha de lanzamiento en AU: {amiibo.release.au}</p> */}
+              </div>
+               
+              <div className="3Ds">
+                {/* Juegos de 3DS */}
+                {amiibo.games3DS && (
+                  <>
+                    <h5>Juegos para 3DS:</h5>
+                    <ul className="p">
+                      {amiibo.games3DS.map((game) => (
+                        <li key={game.gameName}>
+                          <p>Juego: {game.gameName}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+              
+              <div className="switch">
+                {/* Juegos de Switch */}
+                {amiibo.gamesSwitch && (
+                  <>
+                    <h5>Juegos para Switch:</h5>
+                    <ul className="p">
+                      {amiibo.gamesSwitch.map((game) => (
+                        <li key={game.gameName}>
+                          <p>Juego: {game.gameName}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
 
-              {/* Juegos de 3DS */}
-              {amiibo.games3DS && (
-                <>
-                  <h5>Juegos para 3DS:</h5>
-                  <ul>
-                    {amiibo.games3DS.map((game) => (
-                      <li key={game.gameName}>
-                        <p>Juego: {game.gameName}</p>
+              <div className="WiiU">
+                {/* Juegos de Wii U */}
+                {amiibo.gamesWiiU && (
+                  <>
+                    <h5>Juegos para Wii U:</h5>
+                    <ul className="p">
+                      {amiibo.gamesWiiU.map((game) => (
+                        <li key={game.gameName}>
+                          <p>Juego: {game.gameName}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+
+              <div className="JG">
+                {/* Juegos generales */}
+                {amiibo.games && (
+                  <ul className="p">
+                    {amiibo.games.map((game) => (
+                      <li key={game.game}>
+                        <p>Juego: {game.game}</p>
+                        <p>Serie del juego: {game.series}</p>
                       </li>
                     ))}
                   </ul>
-                </>
-              )}
-
-              {/* Juegos de Switch */}
-              {amiibo.gamesSwitch && (
-                <>
-                  <h5>Juegos para Switch:</h5>
-                  <ul>
-                    {amiibo.gamesSwitch.map((game) => (
-                      <li key={game.gameName}>
-                        <p>Juego: {game.gameName}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-
-              {/* Juegos de Wii U */}
-              {amiibo.gamesWiiU && (
-                <>
-                  <h5>Juegos para Wii U:</h5>
-                  <ul>
-                    {amiibo.gamesWiiU.map((game) => (
-                      <li key={game.gameName}>
-                        <p>Juego: {game.gameName}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-
-              {/* Juegos generales */}
-              {amiibo.games && (
-                <ul>
-                  {amiibo.games.map((game) => (
-                    <li key={game.game}>
-                      <p>Juego: {game.game}</p>
-                      <p>Serie del juego: {game.series}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
+                )}
+              </div>
             </div>
           ))
         ) : (

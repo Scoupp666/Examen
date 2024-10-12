@@ -9,17 +9,17 @@
 
 .series-card 
 {
-    width: 100%; 
-    border: 5px solid;
-    border-image: linear-gradient(to bottom, red, orange, yellow) 1;
-    display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; 
-    padding: 20px;
-    margin: 50px auto;
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  border: 3px solid;
+  border-image: linear-gradient(to bottom, red, orange, yellow) 1;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  padding: 20px;
+  margin: 50px auto;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
   
 .series-card > *
@@ -38,6 +38,16 @@
   max-width: 100%;
   height: auto;
   margin-bottom: 10px;
+}
+
+p span
+{
+  color: aquamarine;
+}
+
+.p *:nth-child(even)
+{
+  background-color: greenyellow;
 }
 
 .label
